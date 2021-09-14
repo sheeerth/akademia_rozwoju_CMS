@@ -1,6 +1,6 @@
 ---
 templateKey: product-page
-title: Our Coffee - Test
+title: Our Coffee - Test (Widać)
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 path: /products
