@@ -4,17 +4,29 @@ module.exports = {
     theme: {
         extend: {
             width: {
-                container: '90rem'
+                container: '90rem',
+                box: '59.625rem',
+                photo: '205px',
+                'offer-box': '200px'
             },
             colors: {
                 blue: '#3071E6',
                 yellow: '#FFC300'
             },
             height: {
-                logo: '50px'
+                logo: '50px',
+                photo: '205px',
+                'offer-box': '200px'
             },
             margin: {
-                logo: '162px'
+                logo: '162px',
+                'about-text': '205px',
+            },
+            fontSize: {
+                h2: '10rem'
+            },
+            zIndex: {
+                '-1': '-1'
             }
         },
     },
