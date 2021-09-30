@@ -4,7 +4,7 @@ import Title from "../UI/Title";
 
 const About = () => {
     return (
-        <div className="m-auto w-container p-8">
+        <section className="m-auto w-container p-8" id="o_nas">
             <Title text="O Nas"/>
             <Box className="mb-8 relative">
                 <div className="absolute -top-3 rounded-lg bg-gray-500 w-photo h-photo"></div>
@@ -32,7 +32,7 @@ const About = () => {
                 </div>
                 <div className="absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo"></div>
             </Box>
-        </div>
+        </section>
     );
 };
 

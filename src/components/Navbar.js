@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from './../img/ar_logo.png';
 
-const MenuLink = ({description}) => {
+const MenuLink = ({description, idSection}) => {
     return (
         <div className="mx-4 px-3 py-2 text-yellow leading-5 font-medium cursor-pointer rounded-lg hover:text-black hover:bg-yellow">
-            <span>{description}</span>
+            <a className="leading-5 font-medium cursor-pointer" href={'#' + idSection}>{description}</a>
         </div>
     )
 }
@@ -16,8 +16,8 @@ const Navbar = () => {
             <div className="flex margin-auto px-8 h-16 items-center">
                 <img src={logo} alt="logo akademii rozwoju" className="h-logo mr-logo"/>
                 <div className="flex flex-row items-center">
-                    <MenuLink description={'Oferta'}/>
-                    <MenuLink description={'O Nas'}/>
+                    <MenuLink description={'Oferta'} idSection="oferta"/>
+                    <MenuLink description={'O Nas'} idSection="o_nas"/>
                 </div>
             </div>
         </div>
