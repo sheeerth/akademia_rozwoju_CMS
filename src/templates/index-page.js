@@ -1,20 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Newsletter from "../components/Newsletter";
 import About from "../components/About";
-import Offer from "../components/Offer";
+import Offer, {offerPerson} from "../components/Offer";
+import Content from "../components/Content";
 
 export const IndexPageTemplate = ({
-}) => (
-  <div>
-    <Newsletter/>
-    <About/>
-    <Offer/>
-  </div>
-)
+    offerContent, offerHtml
+}) => {
+    const [forWho, setForWho] = useState(offerPerson.company);
+
+    console.log(offerHtml, offerContent.offers[0])
+
+    return (
+        <div>
+            <Newsletter/>
+            <About/>
+            <Offer setForWho={(data) => setForWho(data)}/>
+            <Content forWho={forWho} content={offerHtml[0]}/>
+            {/*<Content forWho={forWho} content={offerContent.offers[0].text}/>*/}
+        </div>
+    )
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -26,10 +36,15 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  offerContent: PropTypes.shape({
+    offers: PropTypes.array,
+  })
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, html } = data.markdownRemark
+
+  const htmlParse = html.split('<hr>');
 
   return (
     <Layout>
@@ -41,6 +56,8 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        offerContent={frontmatter.offerContent}
+        offerHtml ={htmlParse}
       />
     </Layout>
   )
@@ -89,7 +106,13 @@ export const pageQuery = graphql`
           heading
           description
         }
+        offerContent {
+          offers {
+            heading
+          }
+        }
       }
+      html
     }
   }
 `
