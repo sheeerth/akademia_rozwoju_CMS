@@ -44,10 +44,8 @@ const Newsletter = () => {
                     <div className="flex flex-col mr-8">
                         <h3 className="mb-4 font-bold text-2xl">Chcesz próbkę naszej pracy?</h3>
                         <p className="font-medium text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Ac varius risus elementum mi sed turpis. Id eget vitae id proin.
-                            Lectus leo, nisi, felis vestibulum quis.
-                            Feugiat pellentesque massa sociis praesent ut mi eu velit venenatis.
+                            Nasze kursy, szkolenia i warsztaty to dożywotnia inwestycja w samego siebie. Usługi Akademii Rozwoju umożliwiają poznanie nowej perspektywy, zdobycie nowych umiejętności oraz ich podwyższenie.
+                            Szkolenia mają charakter doskonalący. Część z nich jest prowadzona w trybie indywidualnym. Naukę możesz rozpocząć w dowolnym momencie i z tempem, jaki jest dla Ciebie najlepszy.
                         </p>
                     </div>
                     <div className="ml-8">

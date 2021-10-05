@@ -17,11 +17,11 @@ const Offer = () => {
             <Title text="Oferta"/>
             <div className="w-box m-auto grid grid-cols-3 grid-rows-2 gap-8">
                 <OfferBox title="dla firm"/>
-                <OfferBox title="dla firm"/>
-                <OfferBox title="dla firm"/>
-                <OfferBox title="dla firm"/>
-                <OfferBox title="dla firm"/>
-                <OfferBox title="dla firm"/>
+                <OfferBox title="dla pedagogów"/>
+                <OfferBox title="dla uczniów"/>
+                <OfferBox title="dla studentów"/>
+                {/*<OfferBox title="dla firm"/>*/}
+                {/*<OfferBox title="dla firm"/>*/}
             </div>
         </section>
     );
