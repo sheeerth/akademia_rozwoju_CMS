@@ -3,13 +3,6 @@ import Title from "../UI/Title";
 
 // font-family: Barlow;
 
-export const offerPerson = {
-    company: 'Dla Firm',
-    educator: 'Dla pedagogów',
-    small_students: 'Dla uczniów',
-    students: 'Dla studentów',
-}
-
 const OfferBox = ({title, onClick}) => {
     return (
         <div onClick={onClick} className="w-full bg-yellow h-offer-box rounded-lg p-6 items-center flex capitalize text-center text-5xl font-bold text-blue cursor-pointer">
