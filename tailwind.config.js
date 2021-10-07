@@ -24,10 +24,14 @@ module.exports = {
                 'about-text': '205px',
             },
             fontSize: {
-                h2: '10rem'
+                h2: '10rem',
+                h3: '5rem'
             },
             zIndex: {
                 '-1': '-1'
+            },
+            transitionProperty: {
+                'height': 'height',
             }
         },
     },

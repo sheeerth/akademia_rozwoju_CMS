@@ -1,20 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Newsletter from "../components/Newsletter";
 import About from "../components/About";
-import Offer from "../components/Offer";
+import Offer, {offerPerson} from "../components/Offer";
+import Content from "../components/Content";
 
 export const IndexPageTemplate = ({
-}) => (
-  <div>
-    <Newsletter/>
-    <About/>
-    <Offer/>
-  </div>
-)
+    offerContent
+}) => {
+    const [forWho, setForWho] = useState(0);
+    const headingOffer = offerContent.offers.map((offer) => offer.heading);
+
+    return (
+        <div>
+            <Newsletter/>
+            <About/>
+            <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
+            <Content forWho={offerContent.offers[forWho].heading} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
+        </div>
+    )
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -26,6 +34,9 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  offerContent: PropTypes.shape({
+    offers: PropTypes.array,
+  })
 }
 
 const IndexPage = ({ data }) => {
@@ -41,6 +52,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        offerContent={frontmatter.offerContent}
       />
     </Layout>
   )
@@ -88,6 +100,17 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+        offerContent {
+          offers {
+            heading
+            text
+            course {
+              name
+              purpose
+              description
+            }
+          }
         }
       }
     }

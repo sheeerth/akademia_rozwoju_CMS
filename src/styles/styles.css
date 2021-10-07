@@ -5,3 +5,8 @@
 a {
     color: unset;
 }
+
+.offer_content p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
