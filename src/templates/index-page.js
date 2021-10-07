@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Newsletter from "../components/Newsletter";
 import About from "../components/About";
-import Offer, {offerPerson} from "../components/Offer";
+import Offer from "../components/Offer";
 import Content from "../components/Content";
 
 export const IndexPageTemplate = ({
