@@ -9,19 +9,17 @@ import Offer, {offerPerson} from "../components/Offer";
 import Content from "../components/Content";
 
 export const IndexPageTemplate = ({
-    offerContent, offerHtml
+    offerContent
 }) => {
-    const [forWho, setForWho] = useState(offerPerson.company);
-
-    console.log(offerHtml, offerContent.offers[0])
+    const [forWho, setForWho] = useState(0);
+    const headingOffer = offerContent.offers.map((offer) => offer.heading);
 
     return (
         <div>
             <Newsletter/>
             <About/>
-            <Offer setForWho={(data) => setForWho(data)}/>
-            <Content forWho={forWho} content={offerHtml[0]}/>
-            {/*<Content forWho={forWho} content={offerContent.offers[0].text}/>*/}
+            <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
+            <Content forWho={offerContent.offers[forWho].heading} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
         </div>
     )
 }
@@ -42,9 +40,7 @@ IndexPageTemplate.propTypes = {
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
-
-  const htmlParse = html.split('<hr>');
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
@@ -57,7 +53,6 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         offerContent={frontmatter.offerContent}
-        offerHtml ={htmlParse}
       />
     </Layout>
   )
@@ -109,10 +104,15 @@ export const pageQuery = graphql`
         offerContent {
           offers {
             heading
+            text
+            course {
+              name
+              purpose
+              description
+            }
           }
         }
       }
-      html
     }
   }
 `
