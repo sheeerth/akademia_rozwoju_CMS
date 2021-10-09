@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
             <Newsletter/>
             <About/>
             <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
-            <Content forWho={offerContent.offers[forWho].heading} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
+            <Content forWho={offerContent.offers[forWho].heading} close={offerContent.offers[forWho].close} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
         </div>
     )
 }
@@ -72,39 +72,11 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
         offerContent {
           offers {
             heading
             text
+            close
             course {
               name
               purpose

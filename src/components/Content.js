@@ -20,19 +20,21 @@ const Course = ({course}) => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
             </div>
-            <div className={collapse ? 'block' : 'hidden'}>
-                <p className="mb-4">
+            <div className={`${collapse ? 'block' : 'hidden'} flex flex-col justify-between`}>
+                <p className="mt-4 mr-8">
                     {course.description}
                 </p>
-                <p>
-                    {course.purpose}
-                </p>
+                <div className="bg-blue p-4 text-white rounded-lg mt-4 font-medium">
+                    <p>
+                        {course.purpose}
+                    </p>
+                </div>
             </div>
         </div>
     );
 };
 
-const Content = ({ forWho, course, className, description }) => {
+const Content = ({ forWho, course, className, description, close }) => {
     const CourseElements = course.map(el => {
         return (
            <Course course={el}/>
@@ -46,6 +48,9 @@ const Content = ({ forWho, course, className, description }) => {
                 <div className={`offer_content ${className}`} dangerouslySetInnerHTML={{ __html: description }}/>
             </div>
             {CourseElements}
+            <div className="w-box m-auto">
+                <div className={`offer_content ${className}`} dangerouslySetInnerHTML={{ __html: close }}/>
+            </div>
         </section>
     )
 }
