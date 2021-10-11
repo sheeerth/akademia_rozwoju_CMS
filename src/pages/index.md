@@ -69,27 +69,27 @@ offerContent:
       - name: Jak rozmawiać o myślach samobójczych i doświadczeniach krzywdy w domu?
         purpose:
         description:
-      - heading: Dla Studentów
-        close: Są to szkolenia, które mogę przeprowadzić w szkole lub online dla pedagogów po wcześniejszym ustaleniu terminu. W Akademii Rozwoju możliwe jest również dostosowanie tematów i opracowanie szkoleń i warsztatów do potrzeb pedagogów.
-        text: >
-        course:
-          - name: Wołanie o pomoc między wierszami – analiza prac uczniów.
-            description: Gdy ktoś popełnia samobójstwo, pojawia się wiele emocji i myśli. Ludzie zaczynają się zastanawiać, co mogli zrobić inaczej, dlaczego niczego nie zauważyli. Jako dorośli ludzie zdarza nam się bagatelizować dziecięcą wyobraźnie i jej wytwory, która czasami może się okazać wołaniem o pomoc. Dzieci i młodzież w inny sposób niż dorośli komunikują swoje problemy. Jednym ze sposobów ich niemego krzyku o pomoc są rysunku, wiersze, opowiadania czy piosenki, których słuchają.
-            purpose: Zwrócenie uwagi pedagogów na wołanie o pomoc między wierszami. W pracach konkursowych, zaliczeniowych czy „zwyczajnych gryzmołach” mogą kryć się komunikaty, dzięki którym można zapobiec tragedii. Po szkoleniu pedagodzy będą bardziej wyczuleni na sygnały płynące od uczniów.
-          - name: Śmierć – jak rozmawiać o tragedii?.
-            purpose:
-            description:
-          - name: Zauważ, zapytaj, zareaguj – problemy, których doświadczają bezbronni.
-            purpose:
-            description:
-          - name: Interwencja kryzysowa – każdy z nas może stać się interwentem kryzysowym.
-            purpose:
-            description:
-          - name: Jak budować bezpieczną przestrzeń dla uczniów?
-            purpose:
-            description:
-          - name: Jak rozmawiać o myślach samobójczych i doświadczeniach krzywdy w domu?
-            purpose:
-            description:
+  - heading: Dla Studentów
+    close: Są to szkolenia, które mogę przeprowadzić w szkole lub online dla pedagogów po wcześniejszym ustaleniu terminu. W Akademii Rozwoju możliwe jest również dostosowanie tematów i opracowanie szkoleń i warsztatów do potrzeb pedagogów.
+    text: >
+    course:
+      - name: Wołanie o pomoc między wierszami – analiza prac uczniów.
+        description: Gdy ktoś popełnia samobójstwo, pojawia się wiele emocji i myśli. Ludzie zaczynają się zastanawiać, co mogli zrobić inaczej, dlaczego niczego nie zauważyli. Jako dorośli ludzie zdarza nam się bagatelizować dziecięcą wyobraźnie i jej wytwory, która czasami może się okazać wołaniem o pomoc. Dzieci i młodzież w inny sposób niż dorośli komunikują swoje problemy. Jednym ze sposobów ich niemego krzyku o pomoc są rysunku, wiersze, opowiadania czy piosenki, których słuchają.
+        purpose: Zwrócenie uwagi pedagogów na wołanie o pomoc między wierszami. W pracach konkursowych, zaliczeniowych czy „zwyczajnych gryzmołach” mogą kryć się komunikaty, dzięki którym można zapobiec tragedii. Po szkoleniu pedagodzy będą bardziej wyczuleni na sygnały płynące od uczniów.
+      - name: Śmierć – jak rozmawiać o tragedii?.
+        purpose:
+        description:
+      - name: Zauważ, zapytaj, zareaguj – problemy, których doświadczają bezbronni.
+        purpose:
+        description:
+      - name: Interwencja kryzysowa – każdy z nas może stać się interwentem kryzysowym.
+        purpose:
+        description:
+      - name: Jak budować bezpieczną przestrzeń dla uczniów?
+        purpose:
+        description:
+      - name: Jak rozmawiać o myślach samobójczych i doświadczeniach krzywdy w domu?
+        purpose:
+        description:
 ---
       

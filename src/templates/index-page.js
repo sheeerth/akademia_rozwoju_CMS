@@ -14,12 +14,17 @@ export const IndexPageTemplate = ({
     const [forWho, setForWho] = useState(0);
     const headingOffer = offerContent.offers.map((offer) => offer.heading);
 
+    const offerBoxes = headingOffer.length > 0 ?
+        <>
+            <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
+            <Content key={offerContent.offers[forWho].heading} forWho={offerContent.offers[forWho].heading} close={offerContent.offers[forWho].close} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
+        </> : null;
+
     return (
         <div>
             <Newsletter/>
             <About/>
-            <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
-            <Content forWho={offerContent.offers[forWho].heading} close={offerContent.offers[forWho].close} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
+            {offerBoxes}
         </div>
     )
 }
