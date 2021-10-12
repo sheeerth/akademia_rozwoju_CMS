@@ -35,11 +35,11 @@ const Course = ({course}) => {
 };
 
 const Content = ({ forWho, course, className, description, close }) => {
-    const CourseElements = course.map(el => {
+    const CourseElements = course ? course.map(el => {
         return (
            <Course course={el}/>
         )
-    })
+    }) : [];
 
     return (
         <section className="m-auto w-container p-8">

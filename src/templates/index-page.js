@@ -12,7 +12,10 @@ export const IndexPageTemplate = ({
     offerContent
 }) => {
     const [forWho, setForWho] = useState(0);
-    const headingOffer = offerContent.offers.map((offer) => offer.heading);
+    const headingOffer = offerContent.offers.length > 1 ? offerContent.offers.map((offer) => offer.heading ?? null) : [];
+
+    console.log(headingOffer);
+    console.log(offerContent)
 
     const offerBoxes = headingOffer.length > 0 ?
         <>
@@ -30,15 +33,6 @@ export const IndexPageTemplate = ({
 }
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
   offerContent: PropTypes.shape({
     offers: PropTypes.array,
   })
@@ -50,13 +44,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
         offerContent={frontmatter.offerContent}
       />
     </Layout>
