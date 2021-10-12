@@ -2,16 +2,60 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
+import facebook from '../img/social/Facebook.png'
+import instagram from '../img/social/Instagram.png'
+import email from '../img/social/Email.png'
 import twitter from '../img/social/twitter.svg'
 import vimeo from '../img/social/vimeo.svg'
+import Title from "../UI/Title";
+
+const MenuFooter = ({name, link}) => {
+    return (
+        <div className="h-6 m-2 mx-6 text-sm font-medium">
+            <a href={`#${link}`}>{name}</a>
+        </div>
+    );
+};
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-
+      <footer className="footer bg-blue text-white mt-12">
+        <section className="m-auto w-container p-4">
+            <div className="flex flex-col w-full">
+                <div className="flex flex-row content-center justify-center">
+                    <MenuFooter name={'Oferta'} link={'oferta'}/>
+                    <MenuFooter name={'O Nas'} link={'o_nas'}/>
+                    <MenuFooter name={'Polityka Prywatności'}/>
+                </div>
+                <div className="flex flex-row content-center justify-center">
+                    <a title="facebook" href="https://facebook.com">
+                        <img
+                            className="w-8 h-8 m-4 text-white"
+                            src={facebook}
+                            alt="Facebook"
+                        />
+                    </a>
+                    <a title="instagram" href="https://instagram.com">
+                        <img
+                            className="w-8 h-8 m-4 text-white"
+                            src={instagram}
+                            alt="Instagram"
+                        />
+                    </a>
+                    <a title="email" href="">
+                        <img
+                            className="w-8 h-8 m-4 text-white"
+                            src={email}
+                            alt="email"
+                        />
+                    </a>
+                </div>
+            </div>
+            <div className="flex justify-center text-xs font-bold mt-4">
+                <span>©️ Stowarzyszenie Widzących Więcej</span>
+            </div>
+        </section>
       </footer>
     )
   }
@@ -82,35 +126,7 @@ export default Footer
 //         </section>
 //       </div>
 //       <div className="column is-4 social">
-//         <a title="facebook" href="https://facebook.com">
-//           <img
-//               src={facebook}
-//               alt="Facebook"
-//               style={{ width: '1em', height: '1em' }}
-//           />
-//         </a>
-//         <a title="twitter" href="https://twitter.com">
-//           <img
-//               className="fas fa-lg"
-//               src={twitter}
-//               alt="Twitter"
-//               style={{ width: '1em', height: '1em' }}
-//           />
-//         </a>
-//         <a title="instagram" href="https://instagram.com">
-//           <img
-//               src={instagram}
-//               alt="Instagram"
-//               style={{ width: '1em', height: '1em' }}
-//           />
-//         </a>
-//         <a title="vimeo" href="https://vimeo.com">
-//           <img
-//               src={vimeo}
-//               alt="Vimeo"
-//               style={{ width: '1em', height: '1em' }}
-//           />
-//         </a>
+
 //       </div>
 //     </div>
 //   </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
@@ -6,26 +6,36 @@ import Layout from '../components/Layout'
 import Newsletter from "../components/Newsletter";
 import About from "../components/About";
 import Offer from "../components/Offer";
+import Content from "../components/Content";
 
 export const IndexPageTemplate = ({
-}) => (
-  <div>
-    <Newsletter/>
-    <About/>
-    <Offer/>
-  </div>
-)
+    offerContent
+}) => {
+    const [forWho, setForWho] = useState(0);
+    const headingOffer = offerContent.offers.length > 1 ? offerContent.offers.map((offer) => offer.heading ?? null) : [];
+
+    console.log(headingOffer);
+    console.log(offerContent)
+
+    const offerBoxes = headingOffer.length > 0 ?
+        <>
+            <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
+            <Content key={offerContent.offers[forWho].heading} forWho={offerContent.offers[forWho].heading} close={offerContent.offers[forWho].close} description={offerContent.offers[forWho].text} course={offerContent.offers[forWho].course}/>
+        </> : null;
+
+    return (
+        <div>
+            <Newsletter/>
+            <About/>
+            {offerBoxes}
+        </div>
+    )
+}
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  offerContent: PropTypes.shape({
+    offers: PropTypes.array,
+  })
 }
 
 const IndexPage = ({ data }) => {
@@ -34,13 +44,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        offerContent={frontmatter.offerContent}
       />
     </Layout>
   )
@@ -60,34 +64,17 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+        offerContent {
+          offers {
+            heading
             text
+            close
+            course {
+              name
+              purpose
+              description
+            }
           }
-          heading
-          description
         }
       }
     }

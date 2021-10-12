@@ -1,13 +1,17 @@
 import React from 'react';
 import Box from "../UI/Box";
 import Title from "../UI/Title";
+import Anna from './../img/Anna.png';
+import Gosia from './../img/Gosia.png';
 
 const About = () => {
     return (
         <section className="m-auto w-container p-8" id="o_nas">
             <Title text="O Nas"/>
             <Box className="mb-8 relative">
-                <div className="absolute -top-3 rounded-lg bg-gray-500 w-photo h-photo"></div>
+                <div className="absolute -top-3 rounded-lg bg-gray-500 w-photo h-photo">
+                    <img className="w-photo h-photo rounded-lg" src={Anna}/>
+                </div>
                 <div className="ml-about-text flex flex-col items-start p-4">
                     <h4 className="font-bold text-2xl opacity-90">Anna Breguła</h4>
                     <p className="text-base">
@@ -19,18 +23,15 @@ const About = () => {
             </Box>
             <Box className="mt-8 relative" isBlue="true">
                 <div className="mr-about-text flex flex-col items-start p-4">
-                    <h4 className="font-bold text-2xl opacity-90">Anna Breguła</h4>
+                    <h4 className="font-bold text-2xl opacity-90">Małgorzata Ciechanowska-Florczyk</h4>
                     <p className="text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Lacinia morbi neque, ut imperdiet scelerisque. Gravida in aliquet ut sed eget.
-                        Nisl pulvinar feugiat non placerat quis sit sem. In dolor ullamcorper dis ultrices
-                        malesuada adipiscing pellentesque. Ultricies dolor amet habitant magnis leo
-                        scelerisque nunc tortor. Ornare viverra proin enim purus. Sed amet quis sed
-                        augue diam metus, ligula enim lacus. Auctor imperdiet pellentesque proin aliquam.
-                        Vel pellentesque sapien at mollis pharetra.
+                        Prezes Zarządu Stowarzyszenia Widzących Więcej, Członek Powiatowej Rady Pożytku Publicznego w Mogilnie, Ekspert ds. organizacji wolontariatu i systemów zarządzania w organizacjach, Student psychologii Uniwersytetu Kazimierza Wielkiego w Bydgoszczy.
+                        W swojej pracy świadomie wybieram uważność i systematyczność jako metodę do zbudowania trwałego i efektywnego zespołu. Wierzę, że tylko dobre zarządzanie zasobami ludzkimi może pozytywnie wpływać na budowaną organizację czy markę.
                     </p>
                 </div>
-                <div className="absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo"></div>
+                <div className="absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo">
+                    <img className="w-photo h-photo rounded-lg" src={Gosia}/>
+                </div>
             </Box>
         </section>
     );
