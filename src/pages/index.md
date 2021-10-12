@@ -68,12 +68,26 @@ description: Kaldi is the ultimate spot for coffee lovers who want to learn
   knowledge to anyone.
 offerContent:
   offers:
-    - heading: Test
+    - heading: Dla Firm
+      text: Pierszy opis
+      close: Przedstawione szkolenia mogę przeprowadzić w formie zdalnej jak i
+        stacjonarnej w Państwa firmie lub innym miejscu, po wcześniejszym
+        umówieniu terminu.
+      course:
+        - name: "Pierwszy temat kursu? "
+          description: Tutaj krótki opis
+          purpose: No i taki jest Cel tego szkolenia
+        - name: Drugi temat kurs
+          description: Testowy opis
+          purpose: I taki jest cel
+    - heading: Dla Studentów
       text: test
       close: test
-      course:
-        - name: test
-          description: test
-          purpose: test
+    - heading: Dla Pedagogów
+      text: test
+      close: test
+    - heading: Dla uczniów
+      text: test
+      close: test
 ---
 eawerqwerqwer
