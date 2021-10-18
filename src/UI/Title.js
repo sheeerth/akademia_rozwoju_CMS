@@ -7,7 +7,7 @@ const Title = ({text, small}) => {
     const fontSize = small ? 'text-h3' : 'text-h2'
 
     return (
-        <div className="relative w-box m-auto">
+        <div className="relative w-box m-auto hidden md:block">
             <div className="z-10">
                 <h2 className={`text-blue ${fontSize} font-bold uppercase`}>
                     {text}

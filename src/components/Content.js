@@ -10,7 +10,7 @@ const Course = ({course}) => {
     const [collapse, setCollapse] = useState(false);
 
     return (
-        <div className="bg-yellow my-4 w-box m-auto p-4 rounded-lg transition-height">
+        <div className="bg-yellow my-4 md:w-box m-auto p-4 rounded-lg transition-height">
             <div className="flex justify-between">
                 <span className="block font-bold">{course.name}</span>
                 <svg onClick={() => setCollapse(true)} xmlns="http://www.w3.org/2000/svg" className={`animate-bounce h-6 w-6 cursor-pointer ${collapse ? 'hidden' : 'block'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,13 +42,13 @@ const Content = ({ forWho, course, className, description, close }) => {
     }) : [];
 
     return (
-        <section className="m-auto w-container p-8">
+        <section className="m-auto md:w-container p-8">
             <Title text={forWho} small/>
-            <div className="w-box m-auto">
+            <div className="md:w-box m-auto">
                 <div className={`offer_content ${className}`} dangerouslySetInnerHTML={{ __html: description }}/>
             </div>
             {CourseElements}
-            <div className="w-box m-auto">
+            <div className="md:w-box m-auto">
                 <div className={`offer_content ${className}`} dangerouslySetInnerHTML={{ __html: close }}/>
             </div>
         </section>

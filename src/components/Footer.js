@@ -21,9 +21,9 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer bg-blue text-white mt-12">
-        <section className="m-auto w-container p-4">
+        <section className="m-auto md:w-container p-4">
             <div className="flex flex-col w-full">
-                <div className="flex flex-row content-center justify-center">
+                <div className="flex md:flex-row flex-col content-center justify-center text-center md:text-left">
                     <MenuFooter name={'Oferta'} link={'oferta'}/>
                     <MenuFooter name={'O Nas'} link={'o_nas'}/>
                     <MenuFooter name={'Polityka Prywatności'}/>

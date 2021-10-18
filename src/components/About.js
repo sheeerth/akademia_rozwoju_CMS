@@ -6,13 +6,13 @@ import Gosia from './../img/Gosia.png';
 
 const About = () => {
     return (
-        <section className="m-auto w-container p-8" id="o_nas">
+        <section className="m-auto md:w-container p-8" id="o_nas">
             <Title text="O Nas"/>
             <Box className="mb-8 relative">
-                <div className="absolute -top-3 rounded-lg bg-gray-500 w-photo h-photo">
+                <div className="md:absolute -top-3 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0">
                     <img className="w-photo h-photo rounded-lg" src={Anna}/>
                 </div>
-                <div className="ml-about-text flex flex-col items-start p-4">
+                <div className="md:ml-about-text flex flex-col items-start p-4">
                     <h4 className="font-bold text-2xl opacity-90">Anna Breguła</h4>
                     <p className="text-base">
                         Pedagog, absolwent Uniwersytetu Śląskiego w Katowicach, Wiceprezes Zarządu Głównego Stowarzyszenia Widzących Więcej, autor bloga „Mam depresję”, student psychologii Uniwersytetu SWPS w Katowicach.
@@ -22,14 +22,17 @@ const About = () => {
                 </div>
             </Box>
             <Box className="mt-8 relative" isBlue="true">
-                <div className="mr-about-text flex flex-col items-start p-4">
+                <div className="md:hidden md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0">
+                    <img className="w-photo h-photo rounded-lg" src={Gosia}/>
+                </div>
+                <div className="md:mr-about-text flex flex-col items-start p-4">
                     <h4 className="font-bold text-2xl opacity-90">Małgorzata Ciechanowska-Florczyk</h4>
                     <p className="text-base">
                         Prezes Zarządu Stowarzyszenia Widzących Więcej, Członek Powiatowej Rady Pożytku Publicznego w Mogilnie, Ekspert ds. organizacji wolontariatu i systemów zarządzania w organizacjach, Student psychologii Uniwersytetu Kazimierza Wielkiego w Bydgoszczy.
                         W swojej pracy świadomie wybieram uważność i systematyczność jako metodę do zbudowania trwałego i efektywnego zespołu. Wierzę, że tylko dobre zarządzanie zasobami ludzkimi może pozytywnie wpływać na budowaną organizację czy markę.
                     </p>
                 </div>
-                <div className="absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo">
+                <div className="md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0 hidden">
                     <img className="w-photo h-photo rounded-lg" src={Gosia}/>
                 </div>
             </Box>
