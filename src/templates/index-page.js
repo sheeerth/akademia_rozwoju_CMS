@@ -13,10 +13,6 @@ export const IndexPageTemplate = ({
 }) => {
     const [forWho, setForWho] = useState(0);
     const headingOffer = offerContent.offers.length > 1 ? offerContent.offers.map((offer) => offer.heading ?? null) : [];
-
-    console.log(headingOffer);
-    console.log(offerContent)
-
     const offerBoxes = headingOffer.length > 0 ?
         <>
             <Offer setForWho={(data) => setForWho(data)} headings={headingOffer}/>
