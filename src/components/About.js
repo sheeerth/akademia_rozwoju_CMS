@@ -22,7 +22,7 @@ const About = () => {
                 </div>
             </Box>
             <Box className="mt-8 relative" isBlue="true">
-                <div className="md:hidden md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0">
+                <div className="md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0">
                     <img className="w-photo h-photo rounded-lg" src={Gosia}/>
                 </div>
                 <div className="md:mr-about-text flex flex-col items-start p-4">
@@ -32,7 +32,7 @@ const About = () => {
                         W swojej pracy świadomie wybieram uważność i systematyczność jako metodę do zbudowania trwałego i efektywnego zespołu. Wierzę, że tylko dobre zarządzanie zasobami ludzkimi może pozytywnie wpływać na budowaną organizację czy markę.
                     </p>
                 </div>
-                <div className="md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0">
+                <div className="md:absolute -top-3 right-4 rounded-lg bg-gray-500 w-photo h-photo m-auto md:m-0 hidden">
                     <img className="w-photo h-photo rounded-lg" src={Gosia}/>
                 </div>
             </Box>
