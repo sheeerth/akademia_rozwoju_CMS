@@ -1,3 +1,5 @@
+@import '~swiper/swiper-bundle.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,4 +11,8 @@ a {
 .offer_content p {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.swiper {
+    padding-bottom: 42px;
 }
